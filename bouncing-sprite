@@ -1,0 +1,13 @@
+let Sami = game.createSprite(2, 2);
+input.onButtonPressed(Button.A, function () {
+    Sami.turnRight(45)
+})
+input.onButtonPressed(Button.B, function () {
+    Sami.setX(Math.randomRange(0, 4))
+    Sami.setY(Math.randomRange(0, 4))
+})
+basic.forever(function () {
+    basic.pause(150)
+    Sami.move(1)
+    Sami.ifOnEdgeBounce()
+})
